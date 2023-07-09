@@ -29,7 +29,6 @@ public class AdminService {
                     categoryList.add(category);
                     filmCategoryList.add(category);
                 }
-
                 System.out.println("Do you want to add another category? (Y/N)");
                 String answer = input.nextLine();
                 if(answer.equalsIgnoreCase("N")) {
@@ -39,27 +38,23 @@ public class AdminService {
                     break;
                 }
                 break;
-
             }
-
             while (true) {
                 System.out.println("Enter the Platform Name");
                 String platformName = input.nextLine();
                 Platform platform = new Platform(platformName);
                 filmPlatformList.add(platform);
 
-                System.out.println("Do you want to add another category? (Y/N)");
+                System.out.println("Do you want to add another platform? (Y/N)");
                 String answer = input.nextLine();
 
-                if(answer.equalsIgnoreCase("Y")) {
+                if(answer.equalsIgnoreCase("N")) {
                     break;
-                } else if(!answer.equalsIgnoreCase("N")) {
+                } else if(!answer.equalsIgnoreCase("Y")) {
                     System.out.println("You have entered incorrectly!");
                     break;
                 }
             }
-
-
             System.out.println("Enter the Film Name: ");
             String filmName = input.nextLine();
             System.out.println("Enter the Director Name: ");
@@ -84,8 +79,6 @@ public class AdminService {
                     break;
                 }
             }
-
-
             Film film = new Film(filmCategoryList, filmPlatformList, filmName, directorName, productionYear, filmShowTimeList);
             filmList.add(film);
             categoryService.updateCategoryFilmCount(filmList, filmCategoryList);

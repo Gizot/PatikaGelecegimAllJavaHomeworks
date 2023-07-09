@@ -15,7 +15,7 @@ public class UserService {
             }
             int categoryNum = Integer.parseInt(input.nextLine());
             Category category = categoryList.get(categoryNum - 1);
-            System.out.println("\n" + "In the category of \" " +category.getCategoryName() + " \"" + category.getFilmCount() + " film bulunmaktadır.");
+            System.out.println("\n" + "In the category have \" " +category.getCategoryName()  + category.getFilmCount() + " films");
 
             for (Film film : filmList) {
 
