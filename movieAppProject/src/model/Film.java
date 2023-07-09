@@ -1,26 +1,48 @@
 package model;
-
 import java.util.List;
-
 public class Film {
     private String filmName;
-    private String director;
-    private Double imdbPoint;
-    private List<Category> filmCategory;
-    private List<Platform> filmPlatform;
+    private String directorName;
+    private int publishYear;
+    private List<DurationTime> showHours;
+    private List<Category> categoryList;
+    private List<Platform> platformList;
 
-    private List<MovieDuration> filmDuration;
-
-    public Film(String filmName, String director,
-                Double imdbPoint, List<Category> filmCategory,
-                List<Platform> filmPlatform, List<MovieDuration> filmDuration) {
+    public Film(List<Category> categoryList, List<Platform> platformList, String filmName, String directorName, int publishYear, List<DurationTime> showHours) {
+        this.categoryList = categoryList;
+        this.platformList = platformList;
         this.filmName = filmName;
-        this.director = director;
-        this.imdbPoint = imdbPoint;
-        this.filmCategory = filmCategory;
-        this.filmPlatform = filmPlatform;
-        this.filmDuration = filmDuration;
+        this.directorName = directorName;
+        this.publishYear = publishYear;
+        this.showHours = showHours;
+    }
 
+    @Override
+    public String toString() {
+        return "Film{" +
+                "categoryList=" + categoryList +
+                ", platformList=" + platformList +
+                ", filmName='" + filmName + '\'' +
+                ", directorName='" + directorName + '\'' +
+                ", publishYear=" + publishYear +
+                ", showHours=" + showHours +
+                '}';
+    }
+
+    public List<Category> getCategoryList() {
+        return categoryList;
+    }
+
+    public void setCategoryList(List<Category> categoryList) {
+        this.categoryList = categoryList;
+    }
+
+    public List<Platform> getPlatformList() {
+        return platformList;
+    }
+
+    public void setPlatformList(List<Platform> platformList) {
+        this.platformList = platformList;
     }
 
     public String getFilmName() {
@@ -31,55 +53,27 @@ public class Film {
         this.filmName = filmName;
     }
 
-    public String getDirector() {
-        return director;
+    public String getDirectorName() {
+        return directorName;
     }
 
-    public void setDirector(String director) {
-        this.director = director;
+    public void setDirectorName(String directorName) {
+        this.directorName = directorName;
     }
 
-    public Double getImdbPoint() {
-        return imdbPoint;
+    public int getPublishYear() {
+        return publishYear;
     }
 
-    public void setImdbPoint(Double imdbPoint) {
-        this.imdbPoint = imdbPoint;
+    public void setPublishYear(int publishYear) {
+        this.publishYear = publishYear;
     }
 
-    public List<Category> getFilmCategory() {
-        return filmCategory;
+    public List<DurationTime> getShowHours() {
+        return showHours;
     }
 
-    public void setFilmCategory(List<Category> filmCategory) {
-        this.filmCategory = filmCategory;
-    }
-
-    public List<Platform> getFilmPlatform() {
-        return filmPlatform;
-    }
-
-    public void setFilmPlatform(List<Platform> filmPlatform) {
-        this.filmPlatform = filmPlatform;
-    }
-
-    public List<MovieDuration> getFilmDuration() {
-        return filmDuration;
-    }
-
-    public void setFilmDuration(List<MovieDuration> filmDuration) {
-        this.filmDuration = filmDuration;
-    }
-
-    @Override
-    public String toString() {
-        return "Film{" +
-                "filmName='" + filmName + '\'' +
-                ", director='" + director + '\'' +
-                ", imdbPoint=" + imdbPoint +
-                ", filmCategory=" + filmCategory +
-                ", filmPlatform=" + filmPlatform +
-                ", filmDuration=" + filmDuration +
-                '}';
+    public void setShowHours(List<DurationTime> showHours) {
+        this.showHours = showHours;
     }
 }

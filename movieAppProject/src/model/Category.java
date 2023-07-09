@@ -1,12 +1,12 @@
 package model;
 
 public class Category {
-    private  String categoryName;
-    private  String filmCount;
+    private String categoryName;
+    private int filmCount;
 
-    public Category(String categoryName, String filmCount) {
+    public Category(String categoryName) {
         this.categoryName = categoryName;
-        this.filmCount = filmCount;
+        this.filmCount = 0;
     }
 
     public String getCategoryName() {
@@ -17,11 +17,11 @@ public class Category {
         this.categoryName = categoryName;
     }
 
-    public String getFilmCount() {
+    public int getFilmCount() {
         return filmCount;
     }
 
-    public void setFilmCount(String filmCount) {
+    public void setFilmCount(int filmCount) {
         this.filmCount = filmCount;
     }
 
@@ -29,7 +29,7 @@ public class Category {
     public String toString() {
         return "Category{" +
                 "categoryName='" + categoryName + '\'' +
-                ", filmCount='" + filmCount + '\'' +
+                ", filmCount=" + filmCount +
                 '}';
     }
 }
