@@ -13,7 +13,7 @@ public class AdminService {
             List<Platform> filmPlatformList = new ArrayList<>();
             List<DurationTime> filmShowTimeList = new ArrayList<>();
 
-            while(true) { // Kategori döngüsü
+            while(true) {
                 System.out.println("Enter a category name: ");
                 String categoryName = input.nextLine();
                 Category category;
@@ -59,7 +59,7 @@ public class AdminService {
                 }
             }
 
-            // Filmin geri kalan bilgilerini al
+
             System.out.println("Enter the Film Name: ");
             String filmName = input.nextLine();
             System.out.println("Enter the Director Name: ");
@@ -67,7 +67,7 @@ public class AdminService {
             System.out.println("Enter the Product Year: ");
             int productionYear = Integer.parseInt(input.nextLine());
 
-            // Seans döngüsü
+
             while (true) {
                 System.out.println("Enter the Session Time");
                 String showTime = input.nextLine();
