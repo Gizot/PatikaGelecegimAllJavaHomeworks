@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/areaOfTheCircle/areaOfTheCircle.iml" filepath="$PROJECT_DIR$/areaOfTheCircle/areaOfTheCircle.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bodyMassIndex/bodyMassIndex.iml" filepath="$PROJECT_DIR$/bodyMassIndex/bodyMassIndex.iml" />
+      <module fileurl="file://$PROJECT_DIR$/calculateKDV/calculateKDV.iml" filepath="$PROJECT_DIR$/calculateKDV/calculateKDV.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hypotenuse/hypotenuse.iml" filepath="$PROJECT_DIR$/hypotenuse/hypotenuse.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/javaHomeworks.iml" filepath="$PROJECT_DIR$/.idea/javaHomeworks.iml" />
+      <module fileurl="file://$PROJECT_DIR$/manavKasa/manavKasa.iml" filepath="$PROJECT_DIR$/manavKasa/manavKasa.iml" />
+      <module fileurl="file://$PROJECT_DIR$/taksimetre/taksimetre.iml" filepath="$PROJECT_DIR$/taksimetre/taksimetre.iml" />
+      <module fileurl="file://$PROJECT_DIR$/triangularArea/triangularArea.iml" filepath="$PROJECT_DIR$/triangularArea/triangularArea.iml" />
+    </modules>
+  </component>
+</project>
