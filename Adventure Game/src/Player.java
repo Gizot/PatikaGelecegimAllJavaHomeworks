@@ -7,9 +7,11 @@ public class Player {
     private int money;
     private String charName;
     private String name;
+    private Inventory inventory;
 
     public Player(String name) {
         this.name = name;
+        this.inventory = new Inventory();
     }
     public void selectChar() {
         Samurai samurai = new Samurai();
@@ -47,6 +49,8 @@ public class Player {
                 " |" + " Para : " + this.getMoney());
 
     }
+
+
 
 
     public void initPlayer(GameChar gameChar) {
@@ -96,5 +100,13 @@ public class Player {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Inventory getInventory() {
+        return inventory;
+    }
+
+    public void setInventory(Inventory inventory) {
+        this.inventory = inventory;
     }
 }
