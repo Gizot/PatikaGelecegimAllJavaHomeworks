@@ -21,8 +21,10 @@ public class Game {
             System.out.println("***********Bölgeler****************");
             System.out.println();
             System.out.println("1 - Güvenli Ev -->  Güvende olmak istiyorsan buraya gidebilirsin..");
-            System.out.println("2 - Mağaza --> Mağazadan silah ya da zırh satın alabilirsiniz !");
+            System.out.println("2 - Dükkan --> Mağazadan silah ya da zırh satın alabilirsiniz !");
             System.out.println("3 - Mağara --> Mağaraya gir, dikkatli ol harkonnen çıkabilir !");
+            System.out.println("4 - Orman --> Ormana git, dikkatli ol vogon çıkabilir !");
+            System.out.println("5 - Nehir --> Nehire git, dikkat taş düşebilir ayı çıkabilir !");
             System.out.println("0 - Çıkış yap --> Oyunu sonlandır. ");
             System.out.println();
             System.out.println("*************************************");
@@ -43,8 +45,14 @@ public class Game {
                 case 3:
                     location = new Cave(player);
                     break;
+                case 4:
+                    location = new Forest(player);
+                    break;
+                case 5:
+                    location = new River(player);
+                    break;
                 default: // secim yapılmazsa default olarak SafeHouse'da bulunsun.
-                    location = new SafeHouse(player);
+                    System.out.println("Lütfen geçerli bir ifade giriniz");
 
 
 
