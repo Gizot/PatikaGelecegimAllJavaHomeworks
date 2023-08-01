@@ -6,28 +6,31 @@ public class ToolStore extends NormalLocation {
     @Override
     public boolean onLocation() {
         System.out.println("Mağazaya hoşgeldiniz !");
-        System.out.println("1 - Silahlar");
-        System.out.println("2 - Zırhlar");
-        System.out.println("3 - Çıkış Yap");
-        System.out.println("Seçiminiz : ");
-        int selectCase = input.nextInt();//Location.input.nextInt(); şeklinde de tanımlayabilirdik
-        while (selectCase < 1 || selectCase > 3) {
-            System.out.println("Geçersiz bir değer girdiniz, lütfen geçerli bir değer giriniz : ");
-            selectCase = input.nextInt(); // aynı şekilde bunu da Location.input.nextInt(); şeklinde tanımlayabilirdik.
-        }
-        switch (selectCase) {
-            case 1:
-                printWeapon();
-                buyWeapon();
-                break;
-            case 2:
-                printArmor();
-                buyWeapon();
-                break;
-            case 3:
-                System.out.println("Her zaman bekleriz.");
-                return true;
-
+        boolean showMenu = true;
+        while (showMenu) {
+            System.out.println("1 - Silahlar");
+            System.out.println("2 - Zırhlar");
+            System.out.println("3 - Çıkış Yap");
+            System.out.println("Seçiminiz : ");
+            int selectCase = input.nextInt();//Location.input.nextInt(); şeklinde de tanımlayabilirdik
+            while (selectCase < 1 || selectCase > 3) {
+                System.out.println("Geçersiz bir değer girdiniz, lütfen geçerli bir değer giriniz : ");
+                selectCase = input.nextInt(); // aynı şekilde bunu da Location.input.nextInt(); şeklinde tanımlayabilirdik.
+            }
+            switch (selectCase) {
+                case 1:
+                    printWeapon();
+                    buyWeapon();
+                    break;
+                case 2:
+                    printArmor();
+                    buyArmor();
+                    break;
+                case 3:
+                    System.out.println("Her zaman bekleriz.");
+                    showMenu = false;
+                    break;
+            }
         }
         return true; //true döndürdük çünkü normal locationlarda ölme ihtimalim yok
     }
@@ -41,6 +44,7 @@ public class ToolStore extends NormalLocation {
                     "\t | Para : " + weapon.getPrice() +
                     "\t | Hasar : " + weapon.getDamage());
         }
+        System.out.println("0 - Çıkış yap");
     }
 
 
@@ -52,6 +56,7 @@ public class ToolStore extends NormalLocation {
             System.out.println("Geçersiz değer, tekrar giriniz : ");
             selectWeaponID = input.nextInt();
         }
+        if (selectWeaponID != 0) {
             Weapon selectedWeapon = Weapon.getWeaponObjByID(selectWeaponID);
 
             if (selectedWeapon != null) {
@@ -63,50 +68,59 @@ public class ToolStore extends NormalLocation {
                     int balance = this.getPlayer().getMoney() - selectedWeapon.getPrice();
                     this.getPlayer().setMoney(balance);
                     System.out.println("Kalan bakiyeniz : " + this.getPlayer().getMoney());
-                    this.getPlayer().getInventory().getWeapon().getName();
-                    System.out.println("Önceki silahınız : " + this.getPlayer().getInventory().getWeapon().getName());
                     this.getPlayer().getInventory().setWeapon(selectedWeapon);
-                    System.out.println("Yeni silahınız : " + this.getPlayer().getInventory().getWeapon().getName());
+                    // System.out.println("Önceki silahınız : " + this.getPlayer().getInventory().getWeapon().getName());
+                    // this.getPlayer().getInventory().setWeapon(selectedWeapon);
+                    // System.out.println("Yeni silahınız : " + this.getPlayer().getInventory().getWeapon().getName());
 
 
                 }
+
             }
+
+        }
+    }
+
+    public void printArmor() {
+        System.out.println("*****************Zırhlar*****************");
+        for (Armor a : Armor.armors()) { //Armor veritipinde a  nesnesi oluşturalım
+            // Bu a nesnesi Armor sınıfının armors metodunu geri döndürsün.
+            System.out.println(a.getId() +
+                    " | " + a.getName() +
+                    " | " + "Zırh  : " + a.getBlock() +
+                    " | " + "Para : " + a.getPrice());
+
         }
 
-                public void printArmor(){
-                    System.out.println("*****************Zırhlar*****************");
-                    for (Armor a : Armor.armors()){ //Armor veritipinde a  nesnesi oluşturalım
-                        // Bu a nesnesi Armor sınıfının armors metodunu geri döndürsün.
-                        System.out.println(a.getId() +
-                                " | " + a.getName() +
-                                " | " + "Zırh  : " + a.getBlock() +
-                                " | " + "Para : " +a.getPrice());
+    }
 
-                    }
-
-                }
-
-    public void BuyArmor(){
+    public void buyArmor() {
         System.out.println("Bir zırh seçiniz : ");
 
         int selectArmorID = input.nextInt();
-        while (selectArmorID < 1 || selectArmorID > Armor.armors().length) {
+        while (selectArmorID < 0 || selectArmorID > Armor.armors().length) {
             System.out.println("Geçersiz değer, tekrar giriniz : ");
             selectArmorID = input.nextInt();
         }
 
-        Armor selectedArmor = Armor.getArmorObjByID(selectArmorID);
-        if(selectedArmor != null) {
-            if(selectedArmor.getPrice() > this.getPlayer().getMoney()) {
-                System.out.println("Yeterli paranız bulunmamaktadır !");
-            } else {
-                System.out.println(selectedArmor.getName() + " zırhını satın aldınız !");
+        if (selectArmorID != 0){
+            Armor selectedArmor = Armor.getArmorObjByID(selectArmorID);
 
-                this.getPlayer().setMoney(this.getPlayer().getMoney() - selectedArmor.getPrice());
-                this.getPlayer().getInventory().setArmor(selectedArmor);
-                System.out.println("Kalan bakiyeniz : " + this.getPlayer().getMoney());
+            if (selectedArmor != null) {
+                if (selectedArmor.getPrice() > this.getPlayer().getMoney()) {
+                    System.out.println("Yeterli paranız bulunmamaktadır !");
+                } else {
+                    System.out.println(selectedArmor.getName() + " zırhını satın aldınız !");
+
+                    this.getPlayer().setMoney(this.getPlayer().getMoney() - selectedArmor.getPrice());
+                    this.getPlayer().getInventory().setArmor(selectedArmor);
+                    System.out.println("Kalan bakiyeniz : " + this.getPlayer().getMoney());
+                }
             }
         }
     }
-            }
+}
+
+
+
 

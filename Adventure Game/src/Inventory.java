@@ -5,8 +5,8 @@ public class Inventory {
 
 
     public Inventory() {
-        this.weapon = new Weapon(0, "Yumruk",0,0);
-        this.armor = new Armor(0, "Paçavra", 0,0 );
+        this.weapon = new Weapon(-1, "Yumruk",0,0);
+        this.armor = new Armor(-1, "Paçavra", 0,0 );
     }
 
     public Armor getArmor() {
