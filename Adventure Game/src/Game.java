@@ -15,6 +15,7 @@ public class Game {
         player.selectChar();
 
         while (true) {
+            player.printPlayerInfo();
             Location location = null;
             System.out.println();
             System.out.println("***********Bölgeler****************");
