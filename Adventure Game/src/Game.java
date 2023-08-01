@@ -22,6 +22,7 @@ public class Game {
             System.out.println();
             System.out.println("1 - Güvenli Ev -->  Güvende olmak istiyorsan buraya gidebilirsin..");
             System.out.println("2 - Mağaza --> Mağazadan silah ya da zırh satın alabilirsiniz !");
+            System.out.println("3 - Mağara --> Mağaraya gir, dikkatli ol harkonnen çıkabilir !");
             System.out.println("0 - Çıkış yap --> Oyunu sonlandır. ");
             System.out.println();
             System.out.println("*************************************");
@@ -38,6 +39,9 @@ public class Game {
                     break;
                 case 2:
                     location = new ToolStore(player);
+                    break;
+                case 3:
+                    location = new Cave(player);
                     break;
                 default: // secim yapılmazsa default olarak SafeHouse'da bulunsun.
                     location = new SafeHouse(player);
