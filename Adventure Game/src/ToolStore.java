@@ -84,28 +84,29 @@ public class ToolStore extends NormalLocation {
 
                     }
 
-                    public void BuyArmor(){
-                        System.out.println("Bir zırh seçiniz : ");
-
-                        int selectArmorID = input.nextInt();
-                        while (selectArmorID < 1 || selectArmorID > Armor.armors().length) {
-                            System.out.println("Geçersiz değer, tekrar giriniz : ");
-                            selectArmorID = input.nextInt();
-                        }
-
-                        Armor selectedArmor = Armor.getArmorObjByID(selectArmorID);
-                        if(selectedArmor != null) {
-                            if(selectedArmor.getPrice() > this.getPlayer().getMoney()) {
-                                System.out.println("Yeterli paranız bulunmamaktadır !");
-                            } else {
-                                System.out.println(selectedArmor.getName() + " zırhını satın aldınız !");
-
-                                this.getPlayer().setMoney(this.getPlayer().getMoney() - selectedArmor.getPrice());
-                                this.getPlayer().getInventory().setArmor(selectedArmor);
-                                System.out.println("Kalan bakiyeniz : " + this.getPlayer().getMoney());
-                            }
-                        }
-                    }
                 }
+
+    public void BuyArmor(){
+        System.out.println("Bir zırh seçiniz : ");
+
+        int selectArmorID = input.nextInt();
+        while (selectArmorID < 1 || selectArmorID > Armor.armors().length) {
+            System.out.println("Geçersiz değer, tekrar giriniz : ");
+            selectArmorID = input.nextInt();
+        }
+
+        Armor selectedArmor = Armor.getArmorObjByID(selectArmorID);
+        if(selectedArmor != null) {
+            if(selectedArmor.getPrice() > this.getPlayer().getMoney()) {
+                System.out.println("Yeterli paranız bulunmamaktadır !");
+            } else {
+                System.out.println(selectedArmor.getName() + " zırhını satın aldınız !");
+
+                this.getPlayer().setMoney(this.getPlayer().getMoney() - selectedArmor.getPrice());
+                this.getPlayer().getInventory().setArmor(selectedArmor);
+                System.out.println("Kalan bakiyeniz : " + this.getPlayer().getMoney());
+            }
+        }
+    }
             }
 
