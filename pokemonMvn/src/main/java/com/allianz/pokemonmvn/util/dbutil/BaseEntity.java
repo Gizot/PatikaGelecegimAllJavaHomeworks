@@ -30,6 +30,6 @@ public class BaseEntity {
     @LastModifiedDate
     private Date updatedDate;
 
-    @PrePersist
+    @PrePersist //kaydetmeden once yapilacak islemler bu anotasyonla belirtilir.
     protected void onCreate() {setUuid(java.util.UUID.randomUUID());}
 }
