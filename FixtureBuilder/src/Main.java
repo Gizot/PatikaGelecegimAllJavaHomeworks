@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
+    // Main sınıfı, Fixture sınıfını kullanarak bir takım listesi oluşturur ve fikstürü oluşturur.
     public static void main(String[] args) {
 
         List<Team> teams = new ArrayList<>();

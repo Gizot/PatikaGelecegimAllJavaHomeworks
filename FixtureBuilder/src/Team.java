@@ -1,4 +1,6 @@
 public class Team {
+    // Team sınıfı, takımların temsil edildiği sınıftır.
+    // Bir takımın ID'si ve adı vardır.
     private int id;
     private String name;
 
