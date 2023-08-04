@@ -37,7 +37,7 @@ public class Main {
         System.out.println("\n");
 
         //Filter												//get pageNo > 300 !
-        List<Book> filterBook = bookList.stream().filter(book -> book.getPageNo() > 300).collect(Collectors.toList());
+        List<Book> filterBook = bookList.stream().filter(book -> book.getPageNo() > 100).collect(Collectors.toList());
         System.out.println("---------- Sayfa sayısı 300'den Büyük olan kitaplar ------");
         filterBook.stream().forEach(b -> System.out.println(
 
