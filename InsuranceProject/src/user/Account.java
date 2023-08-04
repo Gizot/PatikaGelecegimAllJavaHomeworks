@@ -56,7 +56,9 @@ public abstract class Account implements Comparable<Account> {
         System.out.println("Age: " + user.getAge());
         user.updateLastLogin();
         System.out.println("Last login date: " + user.getLastLogin());
-
+        if (this instanceof Enterprise) {
+            System.out.println("Company Name: " + ((Enterprise) this).getCompanyName());
+        }
         System.out.println("Addresses: ");
         System.out.println("------------------------------------------");
         for (Address address : user.getAddresses()) {
