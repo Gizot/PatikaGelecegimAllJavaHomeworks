@@ -1,4 +1,4 @@
-package ınsurance;
+package policy;
 
 import java.time.LocalDate;
 
