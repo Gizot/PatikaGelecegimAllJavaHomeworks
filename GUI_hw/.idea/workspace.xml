@@ -66,7 +66,7 @@
   <component name="RunManager" selected="Application.Main">
     <configuration name="EducatorGUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.patikadev.view.EducatorGUI" />
-      <module name="PatikaClone" />
+      <module name="GUI_hw" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.patikadev.view.*" />
@@ -79,7 +79,7 @@
     </configuration>
     <configuration name="LoginGUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.patikadev.view.LoginGUI" />
-      <module name="PatikaClone" />
+      <module name="GUI_hw" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.patikadev.view.*" />
@@ -92,14 +92,14 @@
     </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
-      <module name="PatikaClone" />
+      <module name="GUI_hw" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration name="OperatorGUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.patikadev.view.OperatorGUI" />
-      <module name="PatikaClone" />
+      <module name="GUI_hw" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.patikadev.view.*" />
@@ -112,7 +112,7 @@
     </configuration>
     <configuration name="UpdatePatikaGUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.patikadev.view.UpdatePatikaGUI" />
-      <module name="PatikaClone" />
+      <module name="GUI_hw" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.patikadev.view.*" />
